@@ -73,38 +73,6 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              // Detect if we're in an iframe (like DEV.to embed)
-              const isInIframe = window.self !== window.top;
-              
-              // Detect if it's a real mobile device (not just a small iframe)
-              const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-              
-              // If in iframe but NOT a mobile device, force desktop viewport
-              if (isInIframe && !isMobileDevice) {
-                const meta = document.createElement('meta');
-                meta.name = 'viewport';
-                meta.content = 'width=1200, initial-scale=0.5, maximum-scale=1.0, user-scalable=yes';
-                document.head.appendChild(meta);
-                document.documentElement.classList.add('in-iframe');
-              } else if (isMobileDevice) {
-                // Mobile device: use responsive viewport
-                const meta = document.createElement('meta');
-                meta.name = 'viewport';
-                meta.content = 'width=device-width, initial-scale=1.0';
-                document.head.appendChild(meta);
-              } else {
-                // Desktop browser: use responsive viewport
-                const meta = document.createElement('meta');
-                meta.name = 'viewport';
-                meta.content = 'width=device-width, initial-scale=1.0';
-                document.head.appendChild(meta);
-              }
-            `,
-          }}
-        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${creepster.variable} ${pressStart2P.variable} antialiased cursor-none`}

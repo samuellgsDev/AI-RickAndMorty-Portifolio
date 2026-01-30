@@ -160,28 +160,3 @@ h5,
 h6 {
   font-family: var(--font-creepster), serif;
 }
-
-/* --- Iframe Embed Optimization --- */
-/* Force desktop layout when embedded in iframes (like DEV.to) but NOT on mobile devices */
-html.in-iframe {
-  /* Ensure full width is used */
-  min-width: 1200px;
-}
-
-html.in-iframe body {
-  /* Prevent mobile breakpoints from triggering */
-  min-width: 1200px;
-  transform-origin: top left;
-}
-
-/* Ensure grid layouts show properly in iframes */
-html.in-iframe .grid {
-  /* Force desktop grid layout */
-  grid-template-columns: repeat(2, 1fr) !important;
-}
-
-/* Prevent text from being too small in scaled iframe */
-html.in-iframe * {
-  /* Maintain readability */
-  min-height: auto;
-}
