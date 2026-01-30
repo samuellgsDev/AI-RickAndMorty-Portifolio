@@ -121,11 +121,11 @@ export default function PortalTransition({ onComplete }: PortalTransitionProps) 
                   <h1 className="text-2xl sm:text-3xl md:text-5xl font-creepster text-white mb-2 text-shadow-glow">
                       CHOOSE YOUR REALITY
                   </h1>
-                  <p className="text-gray-400 font-mono text-xs sm:text-sm mb-8 md:mb-12">
+                  <p className="text-gray-400 font-mono text-xs sm:text-sm mb-4 md:mb-8">
                       CAUTION: Timelines may vary wildly.
                   </p>
 
-                  <div className="flex flex-wrap gap-6 md:gap-12 items-center justify-center">
+                  <div className="grid grid-cols-2 md:flex gap-4 sm:gap-6 md:gap-12 items-center justify-center max-w-sm md:max-w-none mx-auto">
                       {DIMENSIONS.map((dim, index) => (
                           <motion.div 
                               key={dim.id} 
@@ -147,16 +147,16 @@ export default function PortalTransition({ onComplete }: PortalTransitionProps) 
                                   className="mb-3 relative"
                               >
                                   <Portal size="md" className={clsx(
-                                      "scale-75 sm:scale-100",
+                                      "scale-[0.6] sm:scale-75 md:scale-100",
                                       dim.id === "Pixel" && "filter hue-rotate-[280deg] brightness-150", 
                                       dim.id === "Prime" && "filter hue-rotate-[180deg] saturation-50",
                                       dim.id === "Club" && "filter hue-rotate-[300deg] brightness-125",
                                   )} />
-                                  <dim.icon className={clsx("absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10", dim.color)} />
+                                  <dim.icon className={clsx("absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10", dim.color)} />
                               </motion.div>
                               
                               <motion.h2 
-                                  className={clsx("text-sm sm:text-lg md:text-xl font-bold font-mono group-hover:text-shadow-glow transition-all", dim.color)}
+                                  className={clsx("text-xs sm:text-sm md:text-lg lg:text-xl font-bold font-mono group-hover:text-shadow-glow transition-all", dim.color)}
                               >
                                   {dim.name}
                               </motion.h2>
